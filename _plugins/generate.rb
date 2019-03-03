@@ -4,7 +4,7 @@ module GenImagePosts
 
     # puts "hi hi"
 
-    path = "_posts/images"
+    path = "_posts/sift"
 
     Dir.foreach(path) do |f|
       fn = File.join(path, f)
@@ -14,7 +14,7 @@ module GenImagePosts
     puts Dir.pwd
 
     site.static_files.each do |file|
-      if file.path["/images/"]
+      if file.path["/sift/"]
         date = "#{File.mtime(file.path)}".split(' ')
 
         output = [
@@ -39,7 +39,7 @@ module GenImagePosts
         # out_file.puts("write your stuff here")
         
 
-          # site.pages << CategoryPage.new(site, site.source, "images", file.path)
+          # site.pages << CategoryPage.new(site, site.source, "sift", file.path)
       end
     end
 
