@@ -2,23 +2,8 @@ title: "sift"
 baseurl: ""
 url: ""
 permalink: /:categories/:title
-
 markdown: kramdown
-
 paginate: 5
 paginate_path: "/:num/"
-
-plugins: [jekyll-paginate]
-
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
+plugins: [ jekyll-paginate ]
 exclude: [ build.sh, build.rb ]
-  # - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
