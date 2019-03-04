@@ -1,52 +1,52 @@
-module GenImagePosts
-  def self.process(site, payload)
-    return if @processed
+# module GenImagePosts
+#   def self.process(site, payload)
+#     return if @processed
 
-    # puts "hi hi"
+#     # puts "hi hi"
 
-    path = "_posts/sift"
+#     path = "_posts/sift"
 
-    Dir.foreach(path) do |f|
-      fn = File.join(path, f)
-      File.delete(fn) if f != '.' && f != '..'
-    end
+#     Dir.foreach(path) do |f|
+#       fn = File.join(path, f)
+#       File.delete(fn) if f != '.' && f != '..'
+#     end
 
-    puts Dir.pwd
+#     puts Dir.pwd
 
-    site.static_files.each do |file|
-      if file.path["/sift/"]
-        date = "#{File.mtime(file.path)}".split(' ')
+#     site.static_files.each do |file|
+#       if file.path["/sift/"]
+#         date = "#{File.mtime(file.path)}".split(' ')
 
-        output = [
-          "---",
-          "title: #{file.basename}",
-          "image_basename: #{File.basename(file.path)}",
-          "image_path: #{file.path.split(Dir.pwd)[1]}",
-          "categories: i",
-          "layout: image",
-          "---",
-          "{{ page.image_path }}"
-        ]
+#         output = [
+#           "---",
+#           "title: #{file.basename}",
+#           "image_basename: #{File.basename(file.path)}",
+#           "image_path: #{file.path.split(Dir.pwd)[1]}",
+#           "categories: i",
+#           "layout: image",
+#           "---",
+#           "{{ page.image_path }}"
+#         ]
 
-        filename = "#{path}/#{date.first}-#{file.basename}.html"
-        File.open(filename, "w+") do |f|
-          output.each { |element| f.puts(element) }
-        end
+#         filename = "#{path}/#{date.first}-#{file.basename}.html"
+#         File.open(filename, "w+") do |f|
+#           output.each { |element| f.puts(element) }
+#         end
 
-        # puts "#{date.first}"
+#         # puts "#{date.first}"
 
-        # out_file = File.new("#{path}out.txt", "w")
-        # out_file.puts("write your stuff here")
+#         # out_file = File.new("#{path}out.txt", "w")
+#         # out_file.puts("write your stuff here")
         
 
-          # site.pages << CategoryPage.new(site, site.source, "sift", file.path)
-      end
-    end
+#           # site.pages << CategoryPage.new(site, site.source, "sift", file.path)
+#       end
+#     end
 
-    @processed = true
-  end
-end
+#     @processed = true
+#   end
+# end
 
-Jekyll::Hooks.register :site, :pre_render do |site, payload|
-  GenImagePosts.process(site, payload)
-end
+# Jekyll::Hooks.register :site, :pre_render do |site, payload|
+#   GenImagePosts.process(site, payload)
+# end
