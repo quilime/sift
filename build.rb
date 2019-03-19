@@ -1,3 +1,4 @@
+require 'digest'
 
 path = "_posts/sift"
 
@@ -11,9 +12,12 @@ Dir.glob("sift/**/*") do |file|
     filename = File.basename(file)
     date = "#{File.mtime(file)}".split(' ')
 
+    sha = Digest::SHA256.hexdigest file
+
     output = [
       "---",
       "title: #{filename}",
+      "hexdigest: #{sha}",
       "image_basename: #{File.basename(file)}",
       "image_path: /#{file}",
       "categories: i",

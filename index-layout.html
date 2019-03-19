@@ -1,0 +1,15 @@
+---
+title: index
+layout: layout
+---
+
+<!-- This loops through the paginated posts -->
+{% for post in site.posts %}
+
+    <div id="{{ post.hexdigest }}" class="{{ post.categories[0] }} resizable draggable abs">
+      <!-- <a href="{{ post.url }}.html">{{ post.title }}</a><br/> -->
+      <a href="{{ post.url }}.html"><img src="{{ post.image_path }}" /></a>
+      </a>
+    </div>
+
+{% endfor %}

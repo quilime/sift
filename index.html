@@ -3,12 +3,16 @@ title: index
 layout: default
 ---
 
+<a href="/index-layout.html">LAYOUT</a>
+<br />
+<br />
+
 {% include pagination.html %}
 
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
 
-    <div class="img">      
+    <div class="{{ post.categories[0] }}">      
 
       <a href="{{ post.url }}.html"><img src="{{ post.image_path }}" /></a>
         

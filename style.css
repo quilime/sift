@@ -3,17 +3,19 @@ body {
   font-family:monospace;
   color:#ddd;
   margin:2em;
+  background:#111;
 }
 
-div.img {
+/* Categories */
+div.i { 
   margin:4em 0em; 
+  background:#333;
 }
-
-div.img img {
+div.i img {
   max-width:100%; 
 }
 
 a {
   font-weight:bold;
-  color:#000;
+  color:#fff;
 }

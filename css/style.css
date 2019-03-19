@@ -1,0 +1,30 @@
+body {
+  font-size:1em;
+  font-family:monospace;
+  color:#fff;
+  background:#111;
+  margin:2em;
+}
+
+/* Categories */
+div.i { 
+  background:#222;
+  margin:4em 0em; 
+  font-size:.4em;
+  line-height:2em;
+  padding:.5em;
+}
+div.i img {
+  max-width:100%; 
+}
+
+.abs {
+  position:absolute !important;
+  max-width:auto !important;
+}
+
+a {
+  font-weight:bold;
+  text-decoration:none;
+  color:#999;
+}
